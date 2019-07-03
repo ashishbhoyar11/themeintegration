@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import {MyserviceService } from '../../services/myservice.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-propertypage',
@@ -9,7 +10,7 @@ import {MyserviceService } from '../../services/myservice.service';
 })
 export class PropertypageComponent implements OnInit {
 
-  constructor(public Myservice:MyserviceService) { }
+  constructor(public Myservice:MyserviceService,public router:Router) { }
 
   ngOnInit() {
 
