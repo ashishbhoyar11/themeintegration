@@ -1,0 +1,66 @@
+<div class="d-flex" id="wrapper">
+
+  <app-sidebar></app-sidebar>
+ 
+   <!-- Page Content -->
+   <div id="page-content-wrapper">
+ 
+     <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+       
+       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+           <li class="nav-item active">
+             <!-- <a class="nav-link" href="#">Logout </a> -->
+           </li>
+         </ul>
+       </div>
+     </nav>
+ 
+     <div class="container-fluid">
+       <h1 class="mt-4">Add Blog</h1>
+       <hr>
+       <div class="bootstrap-iso">
+          <div class="container-fluid">
+           <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+         
+             <!-- Form code begins -->
+             <form [formGroup]='addblog'>
+                <div class="form-group">
+                  <label class="control-label">Name</label>
+                  <input class="form-control" [formControl]="addblog.controls['name']" placeholder="Enter Name" type="text"/>
+                </div>
+                <div class="form-group">
+                  <label class="control-label">Blog Title</label>
+                  <input class="form-control" [formControl]="addblog.controls['title']" placeholder="Blog Title" type="text"/>
+                </div>
+                <div class="form-group">
+                  <label class="control-label">Upload Image</label>
+                  <input class="form-control" (change)="fileEvent($event)" [formControl]="addblog.controls['image']"  type="file"/>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Blog Description</label>
+                    <textarea class="form-control" [formControl]="addblog.controls['description']"  cols="30" rows="4"></textarea>
+                  </div>
+               <div class="form-group"> <!-- Date input -->
+                 <label class="control-label" for="date">Date</label>
+                 <input class="form-control" [formControl]="addblog.controls['date']" placeholder="MM/DD/YYY" type="date"/>
+               </div>
+               <div class="form-group"> <!-- Submit button -->
+                 <button class="btn btn-primary" [disabled] ='!addblog.valid' (click)="addBlog()" type="submit">Submit</button>
+               </div>
+              </form>
+              <!-- Form code ends --> 
+         
+             </div>
+           </div>    
+          </div>
+         </div>
+
+         
+     </div>
+   </div>
+   <!-- /#page-content-wrapper -->
+ 
+ </div>
+ <router-outlet></router-outlet>
