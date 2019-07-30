@@ -1,0 +1,20 @@
+ <!-- Sidebar -->
+ <div class="bg-light border-right" id="sidebar-wrapper">
+  <div class="sidebar-heading">Admin Area</div>
+  <div class="list-group list-group-flush">
+    <a [routerLink]="['/dashbord']" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+    <a [routerLink]="['/blog/addblog']" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}" class="list-group-item list-group-item-action bg-light">Add Blog</a>
+    <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
+    <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
+    <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
+    <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
+  </div>
+  <nav class="navbar">
+    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" (click)="logoutAdmin()" style="cursor: pointer;color:blue;">Logout </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+<!-- /#sidebar-wrapper -->

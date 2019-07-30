@@ -22,7 +22,6 @@
                 <button type="button" class="btn btn-info" (click)="onUpdateItem(empData.id)">Update</button>
             </td>
       </tr>
-      
     </tbody>
   </table>
 </div>
@@ -43,14 +42,23 @@
                 <div class="form-group">
                   <label >Name</label>
                   <input type="text" class="form-control" [(ngModel)]="singleEmp.employee_name" [formControl]="formdata.controls['name']"  placeholder="Enter Name">
+                  <div *ngIf="formdata.controls.name.invalid && formdata.controls.name.touched" class="text-danger">
+                    <small *ngIf="formdata.controls.name.errors.required">Name is required.</small>
+                  </div>
                 </div>
                 <div class="form-group">
                     <label >Salary</label>
                     <input type="text" class="form-control" [(ngModel)]="singleEmp.employee_age" [formControl]="formdata.controls['salary']"  placeholder="Enter Salary">
+                    <div *ngIf="formdata.controls.salary.invalid && formdata.controls.salary.touched" class="text-danger">
+                      <small *ngIf="formdata.controls.salary.errors.required">Salary is required.</small>
+                    </div>
                 </div>
                 <div class="form-group">
                       <label >Age</label>
                       <input type="text" class="form-control" [(ngModel)]="singleEmp.employee_salary" [formControl]="formdata.controls['age']"  placeholder="Enter Age">
+                      <div *ngIf="formdata.controls.age.invalid && formdata.controls.age.touched" class="text-danger">
+                        <small *ngIf="formdata.controls.age.errors.required">Age is required.</small>
+                      </div>
                   </div>
 
                   <button type="button" [disabled] = "!formdata.valid" class="btn btn-default" (click)="addemployee(singleEmp.id)">Submit</button>
@@ -60,6 +68,5 @@
           <button type="button" class="btn btn-default" (click)="modelClose()">Close</button>
         </div>
       </div>
-  
     </div>
   </div>

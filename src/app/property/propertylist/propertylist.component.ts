@@ -69,7 +69,6 @@ export class PropertylistComponent implements OnInit {
           this.formdata.reset()
           $("#addModal").modal("hide");
           this.employeelist();
-          
         });
 
       }else{
@@ -79,7 +78,6 @@ export class PropertylistComponent implements OnInit {
           this.formdata.reset()
           $("#addModal").modal("hide");
           this.employeelist();
-
         });
       }
     }
